@@ -1,6 +1,6 @@
 const exp = require('constants');
 const express = require('express');
-
+const cors = require('cors');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -67,7 +67,8 @@ app.use(
     },
   })
 );
-
+app.use(cors());
+app.options('*', cors());
 //development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));

@@ -35,5 +35,10 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
   });
 });
-
+process.on('SIGTERM', () => {
+  console.log('sigterm received.Shutting down...');
+  server.close(() => {
+    console.log('process terminated');
+  });
+});
 //bbbbbarev
