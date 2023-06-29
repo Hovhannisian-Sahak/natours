@@ -3,13 +3,8 @@ const viewsController = require('../contorllers/viewsController');
 const authController = require('../contorllers/authController');
 const bookController = require('../contorllers/bookController');
 const router = express.Router();
-
-router.get(
-  '/',
-  bookController.createBookingCheckout,
-  authController.isLoggedIn,
-  viewsController.getOverview
-);
+router.use(viewsController.alerts);
+router.get('/', authController.isLoggedIn, viewsController.getOverview);
 router.get('/tour/:slug', authController.isLoggedIn, viewsController.getTour);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/signup', authController.isLoggedIn, viewsController.getSignupForm);
