@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { showAlert } from './alerts';
 import axios from 'axios';
 export const login = async (email, password) => {
