@@ -11,7 +11,7 @@ router.get('/signup', authController.isLoggedIn, viewsController.getSignupForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get(
   '/my-tours',
-  // bookController.createBookingCheckout,
+  bookController.createBookingCheckout,
   authController.protect,
   viewsController.getMyTours
 );
