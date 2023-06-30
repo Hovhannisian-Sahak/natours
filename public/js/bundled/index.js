@@ -1,4 +1,4 @@
-var e = require('axios');
+import e from 'axios';
 function t(e) {
   return e && e.__esModule ? e.default : e;
 }
