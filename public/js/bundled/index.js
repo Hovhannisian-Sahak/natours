@@ -79,15 +79,15 @@ const t = () => {
       console.log(e), a('error', e);
     }
   },
-  u = document.getElementById('map'),
-  c = document.querySelector('.form--login'),
+  c = document.getElementById('map'),
+  u = document.querySelector('.form--login'),
   i = document.querySelector('.nav__el--logout'),
   m = document.querySelector('.form--signup'),
   p = document.querySelector('.form-user-data'),
   g = document.querySelector('.form-user-password'),
   y = document.getElementById('book-tour');
-if (u) {
-  let e = JSON.parse(u.dataset.locations);
+if (c) {
+  let e = JSON.parse(c.dataset.locations);
   ((e) => {
     mapboxgl.accessToken =
       'pk.eyJ1Ijoic2FoYWtob3ZoYW5uaXN5YW4xMTEiLCJhIjoiY2xpenFiNTQ5MGdxbzNkdDhydjFpMWFiMyJ9.WU8lPhN_kckM8_XAGq9AEA';
@@ -114,8 +114,8 @@ if (u) {
       });
   })(e);
 }
-c &&
-  c.addEventListener('submit', (e) => {
+u &&
+  u.addEventListener('submit', (e) => {
     e.preventDefault();
     let t = document.getElementById('email').value,
       a = document.getElementById('password').value;
@@ -164,4 +164,6 @@ c &&
       let { tourId: t } = e.target.dataset;
       l(t);
     });
+const w = document.querySelector('body').dataset.alert;
+w && showAlert('success', w, 20);
 //# sourceMappingURL=index.js.map
