@@ -1,7 +1,7 @@
 const express = require('express');
 const viewsController = require('../contorllers/viewsController');
 const authController = require('../contorllers/authController');
-const bookController = require('../contorllers/bookController');
+// const bookController = require('../contorllers/bookController');
 const router = express.Router();
 // router.use(viewsController.alerts);
 router.get('/', authController.isLoggedIn, viewsController.getOverview);
