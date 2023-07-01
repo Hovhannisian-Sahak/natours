@@ -71,11 +71,6 @@ app.use(
 app.use(cors());
 // Access-Control-Allow-Origin *
 // api.natours.com, front-end natours.com
-app.use(
-  cors({
-    origin: 'https://checkout.stripe.com',
-  })
-);
 
 app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
